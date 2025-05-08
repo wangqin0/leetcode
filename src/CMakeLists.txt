@@ -1,2 +1,3 @@
 add_executable(88_merge_sorted_array 88_merge_sorted_array.cpp)
 add_executable(27_remove_element 27_remove_element.cpp)
+add_executable(141_linked_list_cycle 141_linked_list_cycle.cpp)
