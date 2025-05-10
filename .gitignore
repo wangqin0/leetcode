@@ -1,3 +1,7 @@
+# C++ Modules
+modules/
+modules-cache/
+
 # Build directories
 build/
 out/
