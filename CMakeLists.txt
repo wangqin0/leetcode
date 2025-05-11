@@ -1,5 +1,13 @@
 cmake_minimum_required(VERSION 3.30)
 
+# Set compiler to Clang if CC/CXX environment variables are not set
+if(NOT DEFINED ENV{CC})
+  set(CMAKE_C_COMPILER clang)
+endif()
+if(NOT DEFINED ENV{CXX})
+  set(CMAKE_CXX_COMPILER clang++)
+endif()
+
 if(APPLE)
   execute_process(
     COMMAND xcrun --sdk macosx --show-sdk-path
@@ -8,14 +16,6 @@ if(APPLE)
   )
   set(CMAKE_OSX_SYSROOT "${OSX_SDK_PATH}" CACHE STRING "Mac OS X SDK root" FORCE)
   message(STATUS "Using MacOSX SDK at ${CMAKE_OSX_SYSROOT}")
-endif()
-
-# Set compiler to Clang if CC/CXX environment variables are not set
-if(NOT DEFINED ENV{CC})
-  set(CMAKE_C_COMPILER clang)
-endif()
-if(NOT DEFINED ENV{CXX})
-  set(CMAKE_CXX_COMPILER clang++)
 endif()
 
 # On Linux, detect sysroot via compiler and set CMAKE_SYSROOT
@@ -49,7 +49,7 @@ project(Leetcode
     LANGUAGES CXX)
 
 # Specify C++ standard
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
