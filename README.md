@@ -23,7 +23,7 @@ After configuring, build and run individual targets.
 ### Unix
 
 ```bash
-LC_TARGET=141_linked_list_cycle
+LC_TARGET=141_LinkedListCycle
 cmake --build ./build --target "$LC_TARGET"
 ./build/src/"$LC_TARGET"
 ```
@@ -31,12 +31,12 @@ cmake --build ./build --target "$LC_TARGET"
 ### Windows (PowerShell / CMD)
 
 ```powershell
-$env:LC_TARGET = '141_linked_list_cycle'
+$env:LC_TARGET = '141_LinkedListCycle'
 cmake --build build --target $env:LC_TARGET
 .\build\src\$env:LC_TARGET
 ```
 
-Replace `141_linked_list_cycle` with any other target defined in `src/CMakeLists.txt`.
+Replace `141_LinkedListCycle` with any other target defined in `src/CMakeLists.txt`.
 
 ## C++20 Module Demonstration
 
@@ -63,7 +63,7 @@ This will:
 │   │   └── ListNode.cppm     # C++20 module interface
 │   ├── 88_merge_sorted_array.cpp
 │   ├── 27_remove_element.cpp
-│   └── 141_linked_list_cycle.cpp
+│   └── 141_LinkedListCycle.cpp
 ├── modules/                  # Prebuilt PCM files (for module demo)
 └── modules-cache/            # Clang module cache
 ```

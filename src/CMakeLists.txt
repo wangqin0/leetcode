@@ -6,10 +6,20 @@ target_sources(ListNode
         Util/ListNode.cppm
 )
 
-# Add executables for LeetCode solutions
-add_executable(88_MergeSortedArray 88_MergeSortedArray.cpp)
-add_executable(27_RemoveElement 27_RemoveElement.cpp)
+enable_testing()
 
-# Add LinkedListCycle executable with module dependency
-add_executable(141_LinkedListCycle 141_LinkedListCycle.cpp)
-target_link_libraries(141_LinkedListCycle PRIVATE ListNode)
+include(GoogleTest)
+macro(add_listnode_executable exe src)
+    add_executable(${exe} ${src})
+    target_link_libraries(${exe} PRIVATE ListNode GTest::gtest_main)
+    gtest_discover_tests(${exe})
+endmacro()
+
+# Find all .cpp files in the current directory
+file(GLOB CPP_FILES *.cpp)
+
+# Create an executable for each .cpp file
+foreach(CPP_FILE ${CPP_FILES})
+    get_filename_component(EXECUTABLE_NAME ${CPP_FILE} NAME_WE)
+    add_listnode_executable(${EXECUTABLE_NAME} ${CPP_FILE})
+endforeach()
