@@ -81,8 +81,6 @@ TEST_F(MergeTwoSortedListsTest, BasicMerge) {
     
     EXPECT_TRUE(areEqual(result, expected));
     
-    freeList(l1);
-    freeList(l2);
     freeList(result);
     freeList(expected);
 }
@@ -96,7 +94,6 @@ TEST_F(MergeTwoSortedListsTest, FirstListEmpty) {
     
     EXPECT_TRUE(areEqual(result, expected));
     
-    freeList(l2);
     freeList(result);
     freeList(expected);
 }
@@ -110,7 +107,6 @@ TEST_F(MergeTwoSortedListsTest, SecondListEmpty) {
     
     EXPECT_TRUE(areEqual(result, expected));
     
-    freeList(l1);
     freeList(result);
     freeList(expected);
 }
@@ -133,9 +129,6 @@ TEST_F(MergeTwoSortedListsTest, DifferentLengthLists) {
     
     EXPECT_TRUE(areEqual(result, expected));
     
-    freeList(l1);
-    freeList(l2);
     freeList(result);
     freeList(expected);
 }
-
