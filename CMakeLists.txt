@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.28)
 
 # Set compiler to Clang if CC/CXX environment variables are not set
 if(NOT DEFINED ENV{CC})
